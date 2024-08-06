@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Counter</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #f4f4f4;
+}
+.container {
+text-align: center;
+}
+textarea {
+width: 300px;
+height: 150px;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+resize: none;
+}
+#wordCount {
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Word Counter</h1>
+<textarea id="textInput" placeholder="Type something..."></textarea>
+<p>Word Count: <span id="wordCount">0</span></p>
+</div>
+<script>
+const textInput = document.getElementById('textInput');
+const wordCount = document.getElementById('wordCount');
+textInput.addEventListener('input', function() {
+const text = this.value.trim();
+const words = text === '' ? 0 : text.split(/\s+/).length;
+wordCount.textContent = words;
+});
+</script>
+</body>
+</html>
